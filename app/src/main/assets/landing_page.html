@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, royalblue, deepskyblue);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        p {
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            p {
+                font-size: 1em;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+          rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <img src="Sharda_University_logo_no_wordmark.png" style="max-width: 40%" alt="sharda_logo">
+    <h1>Survey ID: <span id="surveyId">Loading...</span></h1>
+    <h4>Location: <span id="location">Loading...</span></h4>
+</div>
+
+<script>
+    function receiveIntentData(surveyId) {
+        document.getElementById("surveyId").innerText = surveyId;
+        if(surveyId == "1"){
+            document.getElementById("location").innerText = "Milan Gachi, Greater Noida";
+        }
+        else if(surveyId == "2"){
+            document.getElementById("location").innerText = "Chirasi, Greater Noida";
+            document.body.style.background = "linear-gradient(135deg, teal, lightseagreen)";
+        }
+    }
+</script>
+</body>
+</html>
